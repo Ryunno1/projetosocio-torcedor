@@ -4,21 +4,17 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-
 import br.projetoproo20161.dao.ConexaoMySQL;
 import br.projetoproo20161.dao.IConexao;
+import java.sql.DriverManager;
 
 public class Principal {
 
-	 public static void main(String[] args) throws ClassNotFoundException, SQLException {
-	       
-	        
-		    IConexao banco = new ConexaoMySQL();
-		    banco.getConexao("jdbc:mysql", "localhost", "sociotorcedor", "root", "");
-		    TelaPrincipal t = new TelaPrincipal();
-		    
-	        
-	       
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
-}
+        IConexao banco = new ConexaoMySQL();
+        //banco.getConnection("jdbc:mysql://sociotorcedor", "root", "");
+        TelaPrincipal t = new TelaPrincipal();
+
+    }
 }
