@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 import br.projetoproo20161.dao.IConexao;
 import br.projetoproo20161.dao.ILogin;
+import br.projetoproo20161.view.TelaCliente;
 
 public class Logando implements ILogin {
 	
@@ -38,6 +39,8 @@ public class Logando implements ILogin {
 			if (vetor.length() > 1) {
 				
 				JOptionPane.showMessageDialog(null, "Logado no sistema");
+				TelaCliente T = new TelaCliente();
+				T.TelaPrincipalCliente();
 			}
 			else {
 				

@@ -34,6 +34,7 @@ public class TelaPrincipal {
 	               
 	            }else if (opc.equals("2")){
 	                login.Logando();
+	               
 	            }
 	            else if (opc.equals("3")){
 	            	
