@@ -9,7 +9,7 @@ public abstract class Cliente {
 	String email;
 	String sexo;
 	
-	Cliente(){}
+	protected Cliente(){}
 	
 	
 	public String getNome() {

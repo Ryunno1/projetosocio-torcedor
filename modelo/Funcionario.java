@@ -10,7 +10,9 @@ public class Funcionario {
 	String email;
 	String sexo;
 	
-	Funcionario(){}
+	protected Funcionario(){
+		
+	}
 	
 	public String getNome() {
 		return nome;
@@ -76,7 +78,7 @@ public class Funcionario {
 		this.sexo = sexo;
 	}
 
-
+ 
 
 	
 	
