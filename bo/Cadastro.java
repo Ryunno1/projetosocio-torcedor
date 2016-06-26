@@ -10,6 +10,9 @@ import javax.swing.JOptionPane;
 import br.projetoproo20161.dao.CadastroDao;
 import br.projetoproo20161.dao.ConexaoMySQL;
 import br.projetoproo20161.dao.IConexao;
+import br.projetoproo20161.view.TelaCliente;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class Cadastro {
 	IConexao banco;
@@ -24,7 +27,7 @@ public class Cadastro {
 
 	            Class.forName("com.mysql.jdbc.Driver");
 	            conexao = DriverManager.getConnection("jdbc:mysql:///sociotorcedor", "root", "");
-	            pstmt = conexao.prepareStatement("INSERT INTO cadastrandonosistema (nome, cpf, idade, telefone, email, sexo, senha) VALUES (?,?,?,?,?,?,?) ");
+	            pstmt = conexao.prepareStatement("INSERT INTO cadastrandonosistema (nome, cpf, idade, telefone, email, sexo, senha, tipo) VALUES (?,?,?,?,?,?,?,?) ");
 
 	            String nome = JOptionPane.showInputDialog("digite seu nome: ");
 	            pstmt.setString(1, nome);
@@ -40,21 +43,54 @@ public class Cadastro {
 	            pstmt.setString(6, sexo);
 	            String senha = JOptionPane.showInputDialog("digite sua senha: ");
 	            pstmt.setString(7, senha);
+                    String tipo = "cliente";
+                    pstmt.setString(8, tipo);
 
 	            int i = pstmt.executeUpdate();
 	            if (i > 0) {
 	                JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso");
+                        
+                      
+                        
 	            } else {
 	                JOptionPane.showMessageDialog(null, "nenhum dado inserido");
 	            }
 
 	        } catch (ClassNotFoundException | SQLException e) {
-	            JOptionPane.showMessageDialog(null, e);
+	            JOptionPane.showMessageDialog(null, e.getMessage());
 	        } finally {
 	            pstmt.close();
 	        }
 
 	    }
+        
+        public void monstrandoUsuario() throws SQLException, ClassNotFoundException {
+
+        String vetor = "";
+        
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql:///sociotorcedor", "root", "");
+            pstmt = con.prepareStatement("SELECT nome, telefone FROM cadastrandonosistema WHERE tipo = 'cliente' ");
+
+            ResultSet result = pstmt.executeQuery();
+
+            ArrayList<String> array = new ArrayList<>();
+            while (result.next()) {
+
+                vetor += "Nome: " + result.getString("nome") + ", Telefone: " + result.getString("telefone") + ";\n";
+
+            }
+            vetor += "\nTodos os usuários Listados Acima";
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+            JOptionPane.showMessageDialog(null, vetor);
+
+    }
 		
 	}
 

@@ -6,7 +6,11 @@ public class TelaClienteNaoSocio {
 	
 	public TelaClienteNaoSocio() {
 		
-		JOptionPane.showInputDialog("olá");
+		String opc = "";
+		JOptionPane.showInputDialog("O que deseja fazer?\n"
+				+ "1 - Verificar ingressos de jogos disponíveis"
+				+ "2 - Quero me tornar sócio e aproveitar os descontos e produtos exclusivos"
+				+ "3 - Voltar ao menu principal");
 	}
 
 }
