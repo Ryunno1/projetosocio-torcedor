@@ -1,16 +1,33 @@
 package br.projetoproo20161.view;
 
+import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
+
+import br.projetoproo20161.bo.ControllerClienteNaoSocio;
 
 public class TelaClienteNaoSocio {
 	
-	public TelaClienteNaoSocio() {
+	public void telaClienteNaoSocio() throws ClassNotFoundException, SQLException {
 		
 		String opc = "";
-		JOptionPane.showInputDialog("O que deseja fazer?\n"
-				+ "1 - Verificar ingressos de jogos disponíveis"
-				+ "2 - Quero me tornar sócio e aproveitar os descontos e produtos exclusivos"
-				+ "3 - Voltar ao menu principal");
+		
+		 do {
+	 opc =	JOptionPane.showInputDialog("O que deseja fazer?\n"
+				+ "1 - Verificar ingressos de jogos disponíveis\n"
+				+ "2 - Quero me tornar sócio e aproveitar os descontos e produtos exclusivos\n"
+				+ "3 - Voltar ao menu principal\n"
+				);
+		
+		if(opc.equals("1")){
+			
+			ControllerClienteNaoSocio cns = new ControllerClienteNaoSocio();
+			cns.mostrandoPartidas();
+			
+		}
+		
+		
+		 }while(!opc.equals("3"));
 	}
 
 }

@@ -62,7 +62,9 @@ public abstract class Cliente {
 		this.sexo = sexo;
 	}
 	
-	
+void comprarIngresso (Integer qtd){
+		
+    }
 
 	
 	

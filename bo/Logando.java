@@ -1,5 +1,7 @@
 package br.projetoproo20161.bo;
 
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,7 +19,7 @@ import br.projetoproo20161.view.TelaFuncionario;
 public class Logando implements ILogin {
     
     	Integer cpf;
-	String pass;
+    	String pass;
         String vetor = " ";
         
 	IConexao banco;
@@ -46,7 +48,7 @@ public class Logando implements ILogin {
                         
 			if (vetor.length() > 1) {
                             
-                  ///////////////////////////////////////////////// verificando se o usu√°rio √© adm
+                  ///////////////////////////////////////////////// verificando se o usu·rio È adm
                         
                                 if (type.equals("adm")) { 
                                     
@@ -56,7 +58,7 @@ public class Logando implements ILogin {
                                     
                                 }else if (type.equals("cliente")){
                                     
-                                    JOptionPane.showMessageDialog(null, "Logado como S√≥cio Cliente");
+                                    JOptionPane.showMessageDialog(null, "Logado como SÛcio Cliente");
                                     TelaCliente T = new TelaCliente();
                                     T.TelaPrincipalCliente();
                                     
@@ -65,7 +67,7 @@ public class Logando implements ILogin {
 			}
 			else {
 				
-				JOptionPane.showMessageDialog(null, "Usu√°rio ou senha n√£o confere");
+				JOptionPane.showMessageDialog(null, "Usu·rio ou senha n„o confere");
 			}
 				vetor = " ";
 		} catch (Exception e) {

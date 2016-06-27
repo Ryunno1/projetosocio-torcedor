@@ -74,8 +74,5 @@ public class ControllerFuncionario extends Funcionario {
 
     }
 
-    public void cadastrarIngressoMaisCaravana() {
-        
-
-    }
+   
 }

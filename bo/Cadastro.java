@@ -82,7 +82,7 @@ public class Cadastro {
                 vetor += "Nome: " + result.getString("nome") + ", Telefone: " + result.getString("telefone") + ";\n";
 
             }
-            vetor += "\nTodos os usu√°rios Listados Acima";
+            vetor += "\nTodos os usu·rios Listados Acima";
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());

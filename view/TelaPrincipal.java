@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class TelaPrincipal {
 	
-	public TelaPrincipal() throws SQLException {
+	public TelaPrincipal() throws SQLException, ClassNotFoundException {
             
             
 		
@@ -25,27 +25,30 @@ public class TelaPrincipal {
 		 String opc = "";
 		 do {
 	            opc = JOptionPane.showInputDialog("Data Atual "+formatarDate.format(data)+"\n"
-	    				+ "Bem Vindo  escolha a op√ß√£o que deseja fazer\n"
-	    				+ "1 - Gostaria de me cadastrar e virar s√≥cio\n"
+	    				+ "Bem Vindo  escolha a opÁ„o que deseja fazer\n"
+	    				+ "1 - Gostaria de me cadastrar e virar sÛcio\n"
 	    				+ "2 - Para logar\n"
-	    				+ "3 - N√£o tenho cadastro e n√£o desejo me cadastrar s√≥ desejo comprar\n\n"
+	    				+ "3 - N„o tenho cadastro e n„o desejo me cadastrar sÛ desejo comprar\n\n"
 	    				+ "0 - Para sair");
 	            if(opc.equals("1")){
 	            	cadastro.Cadastrando();
                         
 	            }else if (opc.equals("2")){
+	            	
 	                login.Logando();
 	               
 	            }
 	            else if (opc.equals("3")){
+	            	TelaClienteNaoSocio t = new TelaClienteNaoSocio();
+	            	t.telaClienteNaoSocio();
 	            	
 	            	
 	            }
 	            else if (opc.equals("0")){
-	            	JOptionPane.showMessageDialog(null,"Obrigado por usar nossos servi√ßos");
+	            	JOptionPane.showMessageDialog(null,"Obrigado por usar nossos serviÁos");
 	            }
 	            else {
-	                JOptionPane.showMessageDialog(null,"Op√ß√£o inv√°lida,tente novamente");
+	                JOptionPane.showMessageDialog(null,"OpÁ„o inv·lida,tente novamente");
 	            }
 	            
 	        }while(!opc.equals("0"));
@@ -54,5 +57,7 @@ public class TelaPrincipal {
 		
 		
 	}
+
+
 
 

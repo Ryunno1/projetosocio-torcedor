@@ -17,9 +17,8 @@ public class TelaFuncionario {
                 do{
                     opc = JOptionPane.showInputDialog("O que deseja fazer?\n"
 				+ "1 - Visualizar todos os clientes cadastrados\n"
-				+ "2 - Cadastrar uma partida\n"
-				+ "3 - Cadastrar uma partida mais caravana\n"
-				+ "4 - Visualizar relatÃ³rio de aÃ§Ãµes dos clientes\n\n"
+				+ "2 - Cadastrar uma partida mais caravana\n"
+				+ "3 - Visualizar relatório de ações dos clientes\n\n"
 				+ "0 - Voltar para o menu principal.\n");
                     
                     if(opc.equals("1")){
